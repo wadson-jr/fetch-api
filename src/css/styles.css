@@ -145,7 +145,7 @@ main {
 
 .container .profile-data .repositories ul li a:hover{
   background-color:hotpink;
-  color: #fff
+  color: #fff;
 }
 
 .container .profile-data.hide{

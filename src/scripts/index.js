@@ -1,5 +1,6 @@
 import { getUser } from "./services/user.js"
 import { getRepos } from "./services/repos.js"
+import { getEvents } from "./services/events.js"
 
 import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
@@ -21,12 +22,12 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
     }
 })
 
-function validadeEmptyInput(userName) {
-    if (userName.length === 0) {
-        alert('Preencha o campo com um Nome de Usuário do GitHub')
-        return true
+    function validadeEmptyInput(userName) {
+        if (userName.length === 0) {
+            alert('Preencha o campo com um Nome de Usuário do GitHub')
+            return true
+        }
     }
-}
 
 async function getUserData(userName) {
     const userResponse = await getUser(userName)
@@ -38,8 +39,12 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepos(userName)
 
+    const eventsResponse = await getEvents(userName)
+
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
+    user.setEvents(eventsResponse)
 
     screen.renderUser(user)
+    screen.renderEvents(user)
 }
