@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -15,4 +16,23 @@ ul{
 
 img{
     max-width: 100%;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+>>>>>>> fcf530bbf688bd4cc2f1b6c09fcc43328325349c
 }
